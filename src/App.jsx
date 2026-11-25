@@ -52,17 +52,36 @@ function ArrowIcon() {
   )
 }
 
+function BrandIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Z" />
+      <path d="m4.5 7.7 7.5 4.4 7.5-4.4M12 12v8.5" />
+    </svg>
+  )
+}
+
+function IntroSplash() {
+  return (
+    <div className="intro-overlay" aria-hidden="true">
+      <div className="intro-wordmark">MERN<span>.studio</span></div>
+      <p className="intro-caption">An idea is taking shape</p>
+      <span className="brand-mark intro-flight-mark grid place-items-center rounded-xl">
+        <BrandIcon />
+      </span>
+    </div>
+  )
+}
+
 function App() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#080b12] text-white">
+      <IntroSplash />
       <div className="site-shell relative mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-16">
         <header className="relative z-10 flex h-20 items-center justify-between border-b border-white/[0.08]">
           <a className="brand-lockup flex items-center gap-3" href="#home" aria-label="MERN Studio home">
             <span className="brand-mark grid h-9 w-9 place-items-center rounded-xl">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Z" />
-                <path d="m4.5 7.7 7.5 4.4 7.5-4.4M12 12v8.5" />
-              </svg>
+              <BrandIcon />
             </span>
             <span className="text-sm font-semibold tracking-wide text-white">MERN<span className="text-violet-300">.studio</span></span>
           </a>
@@ -85,7 +104,7 @@ function App() {
               <span className="status-dot h-1.5 w-1.5 rounded-full bg-emerald-300" />
               YOUR NEXT BIG IDEA STARTS HERE
             </div>
-            <h1 className="hero-title max-w-[700px] text-[clamp(3.35rem,8vw,6.35rem)] font-semibold leading-[0.98] tracking-[-0.075em]">
+            <h1 className="hero-title max-w-[700px] text-[clamp(3.35rem,6vw,6.35rem)] font-semibold leading-[0.98] tracking-[-0.075em]">
               Make it real.
               <span className="title-gradient block">Make it <span className="italic">MERN.</span></span>
             </h1>
@@ -203,7 +222,7 @@ function App() {
           </div>
           <div className="grid gap-4 md:grid-cols-3">
             {highlights.map((highlight) => (
-              <article className="feature-card group rounded-2xl border border-white/[0.08] bg-white/[0.025] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-violet-300/30 hover:bg-violet-300/[0.04] sm:p-7" key={highlight.number}>
+              <article className="feature-card group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.025] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-violet-300/30 hover:bg-violet-300/[0.04] sm:p-7" key={highlight.number}>
                 <div className="mb-8 flex items-center justify-between">
                   <span className="feature-icon grid h-11 w-11 place-items-center rounded-xl text-violet-200 transition-transform duration-300 group-hover:rotate-[-6deg] group-hover:scale-105">{highlight.icon}</span>
                   <span className="text-xs font-medium tracking-widest text-slate-600">{highlight.number}</span>
